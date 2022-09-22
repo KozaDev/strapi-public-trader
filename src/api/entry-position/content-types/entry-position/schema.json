@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "entry_positions",
+  "info": {
+    "singularName": "entry-position",
+    "pluralName": "entry-positions",
+    "displayName": "position",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "string"
+    },
+    "coin": {
+      "type": "string",
+      "required": true
+    },
+    "priceOnEntry": {
+      "type": "float",
+      "required": true
+    },
+    "priceOnExit": {
+      "type": "float"
+    },
+    "amountOfCoin": {
+      "type": "float"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "positions"
+    }
+  }
+}
